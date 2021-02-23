@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/des.cpp
+des.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/des.h
+des_key.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/des_key.h
+des_data.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/des_data.h
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/des.h
+cstdint
+-
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/des_data.h
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/des_key.h
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/fileencryption.cpp
+fileencryption.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/fileencryption.h
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/fileencryption.h
+iostream
+-
+fstream
+-
+string
+-
+des.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/des.h
+
+/home/larry/gitSync/CiperCourse/CppImplementDES/main.cpp
+iostream
+-
+fileencryption.h
+/home/larry/gitSync/CiperCourse/CppImplementDES/fileencryption.h
+
