@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     if(argc > 4)
         output = argv[4];
     cout << argv[1] << " "<< argv[2] << " "<< argv[3] << " "<< argv[4]<<endl;
-    ui64 key = strtoull(argv[2], nullptr, 16);
+    uint64_t key = strtoull(argv[2], nullptr, 16);
     FileEncryption fe(key);
 
     if(enc_dec == "-e")

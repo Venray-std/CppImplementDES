@@ -12,7 +12,7 @@ using namespace std;
 class FileEncryption
 {
 public:
-    FileEncryption(ui64 key);
+    FileEncryption(uint64_t key);
     int encrypt(string input, string output);   // 对外提供接口
     int decrypt(string input, string output);
     

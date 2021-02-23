@@ -19,7 +19,7 @@ int FileEncryption::cipher(string input, string output, bool mode)
 {
     ifstream ifile;
     ofstream ofile;
-    ui64 buffer;
+    uint64_t buffer;
 
     if(input.length()  < 1) input  = "/dev/stdin";
     if(output.length() < 1) output = "/dev/stdout";
@@ -27,13 +27,13 @@ int FileEncryption::cipher(string input, string output, bool mode)
     ifile.open(input,  ios::binary | ios::in | ios::ate);   // 打开文件，以二进制，读方式
     ofile.open(output, ios::binary | ios::out);     // 可以写入文件
 
-    ui64 size = ifile.tellg();  // 返回读写位置
+    uint size = ifile.tellg();  // 返回读写位置
     ifile.seekg(0, ios::beg);
 
-    ui64 block = size / 8;
+    uint block = size / 8;
     if(mode) block--;
 
-    for(ui64 i = 0; i < block; i++)
+    for(uint64_t i = 0; i < block; i++)
     {
         ifile.read((char*) &buffer, 8);
 
@@ -49,21 +49,21 @@ int FileEncryption::cipher(string input, string output, bool mode)
     // 加密操作
     {
         // Amount of padding needed
-        ui8 padding = 8 - (size % 8);
+        uint8_t padding = 8 - (size % 8);
 
         // Padding cannot be 0 (pad full block)
         if (padding == 0)
             padding  = 8;
 
         // Read remaining part of file
-        buffer = (ui64) 0;
+        buffer = (uint64_t) 0;
         if(padding != 8)
             ifile.read((char*) &buffer, 8 - padding);
 
         // Pad block with a 1 followed by 0s
-        ui8 shift = padding * 8;
+        uint8_t shift = padding * 8;
         buffer <<= shift;
-        buffer  |= (ui64) 0x0000000000000001 << (shift - 1);
+        buffer  |= (uint64_t) 0x0000000000000001 << (shift - 1);
 
         buffer = des.encrypt(buffer);
         ofile.write((char*) &buffer, 8);
@@ -75,7 +75,7 @@ int FileEncryption::cipher(string input, string output, bool mode)
         buffer = des.decrypt(buffer);
 
         // Amount of padding on file
-        ui8 padding = 0;
+        uint8_t padding = 0;
 
         // Check for and record padding on end
         while(!(buffer & 0x00000000000000ff))

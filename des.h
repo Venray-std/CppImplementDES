@@ -4,10 +4,6 @@
 #include <cstdint>
 using namespace std;
 
-#define ui64 uint64_t
-#define ui32 uint32_t
-#define ui8  uint8_t
-
 class DES
 {
 public:
@@ -17,8 +13,8 @@ public:
     uint64_t encrypt(uint64_t block);
     uint64_t decrypt(uint64_t block);
 
-    static uint64_t encrypt(uint64_t block, ui64 key);
-    static uint64_t decrypt(uint64_t block, ui64 key);
+    static uint64_t encrypt(uint64_t block, uint64_t key);
+    static uint64_t decrypt(uint64_t block, uint64_t key);
 
 protected:
     void keygen(uint64_t key);
