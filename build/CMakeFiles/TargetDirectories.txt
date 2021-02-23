@@ -1,3 +1,0 @@
-/home/larry/gitSync/CiperCourse/CppImplementDES/build/CMakeFiles/rebuild_cache.dir
-/home/larry/gitSync/CiperCourse/CppImplementDES/build/CMakeFiles/CppImplementDES.dir
-/home/larry/gitSync/CiperCourse/CppImplementDES/build/CMakeFiles/edit_cache.dir
